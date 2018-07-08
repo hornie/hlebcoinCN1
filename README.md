@@ -12,8 +12,8 @@ I hope you didnt pay attention to that crap above. We are just here for the meme
 ```
 sudo apt-get update
 sudo apt-get -y install build-essential gcc g++ git cmake libboost-all-dev
-git clone https://github.com/linescoin/lines
-cd lines
+git clone https://github.com/hornie/hlebcoinCN1
+cd hlebcoinCN1
 export CXXFLAGS="-std=gnu++11"
 make
 ```
