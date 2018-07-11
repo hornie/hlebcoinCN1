@@ -36,11 +36,11 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V5          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = ((uint64_t)(-1)); //boi das a big numbah
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(100000000000000); //boi das not a big numbah
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                 = 30;
 const size_t ZAWY_DIFFICULTY_V2                          = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION   = 0;
-const unsigned EMISSION_SPEED_FACTOR                         = 20; // das a thicc number too
+const unsigned EMISSION_SPEED_FACTOR                         = 20; // but das a thicc number
 const uint64_t GENESIS_BLOCK_REWARD                          = 0;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
@@ -50,7 +50,7 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 20000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 8;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
 const uint64_t MINIMUM_FEE                                   = UINT64_C(100);
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);
 
