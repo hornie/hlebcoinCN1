@@ -95,7 +95,7 @@ bool Currency::generateGenesisBlock() {
   //std::string hex_tx_represent = Common::toHex(txb);
 
   // Hard code coinbase tx in genesis block, because through generating tx use random, but genesis should be always the same
-  std::string genesisCoinbaseTxHex = "011401ff000187e2bc2d029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b6c499429781dbed7fc3be637e35d0962e2154ef2b5497d50f8b1bcdca00842f"; //this is here just to annoy you
+  std::string genesisCoinbaseTxHex = "010f01ff0001dc9e8aae8f85d7c70202fc11191cf6b2a1ad8902c983bc2bddaf19d7e8ef70513e7219f0fbdf246df2ad2101435723ad73f98bc867687d76ffa33dd57ef6aa5922b48b71903bd8df5902ada8"; //this is here just to annoy you
   BinaryArray minerTxBlob;
 
   bool r =
@@ -183,17 +183,8 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
 
   uint64_t baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
-		if (alreadyGeneratedCoins == 0) {
-            baseReward = 1;
-        }
-
-        if (alreadyGeneratedCoins == 1) {
-            baseReward =m_moneySupply*0.01;
-        }
-
-		if (alreadyGeneratedCoins + baseReward >= m_moneySupply) {
-                baseReward = 0;
-            }
+  if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
+    baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
   }
 
