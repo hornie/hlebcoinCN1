@@ -183,8 +183,17 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
 
   uint64_t baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
-  if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 184467440737095516) {
-    baseReward = m_genesisBlockReward;
+		if (alreadyGeneratedCoins == 0) {
+            baseReward = 1;
+        }
+
+        if (alreadyGeneratedCoins == 1) {
+            baseReward =m_moneySupply*0.01;
+        }
+
+		if (alreadyGeneratedCoins + baseReward >= m_moneySupply) {
+                baseReward = 0;
+            }
     std::cout << "Genesis block reward: " << baseReward << std::endl;
   }
 
