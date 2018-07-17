@@ -40,8 +40,8 @@ const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); /
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                 = 30;
 const size_t ZAWY_DIFFICULTY_V2                          = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION   = 0;
-const unsigned EMISSION_SPEED_FACTOR                         = 20; // but das a thicc number
-const uint64_t GENESIS_BLOCK_REWARD                          = 184467440737095516;
+const unsigned EMISSION_SPEED_FACTOR                         = 23; // das a thicc number
+const uint64_t GENESIS_BLOCK_REWARD                          = 18550000;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -50,9 +50,9 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 20000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
-const uint64_t MINIMUM_FEE                                   = UINT64_C(100);
-const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 10;
+const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);
+const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
 
 const uint64_t DIFFICULTY_TARGET                             = 60; // ssssssseconds. maybe sloppy, maybe not, who knows?
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
