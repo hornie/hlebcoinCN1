@@ -40,7 +40,7 @@ const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); /
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                 = 30;
 const size_t ZAWY_DIFFICULTY_V2                          = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION   = 0;
-const unsigned EMISSION_SPEED_FACTOR                         = 23; // das a thicc number
+const unsigned EMISSION_SPEED_FACTOR                         = 24; // das a thicc number
 const uint64_t GENESIS_BLOCK_REWARD                          = 1844674407; //premine goes here
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
