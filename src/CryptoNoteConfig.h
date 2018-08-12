@@ -101,6 +101,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "HLEBcoin"; //nice name, right?
+const char	   GENESIS_COINBASE_TX_HEX[]					 = "010f01ff000180c0cbf0de97cdc902022606ebf6df8efdcdb51e4c35ca570ffadc85359f90a525c0d373bf5389867f8421016638cd3e80bbeb8421e79bea55f35b652a46ad68aabe6c78706a62159250d44a";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -136,6 +137,7 @@ const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          //
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
 const char* const SEED_NODES[] = { "149.154.69.143:18522", "149.154.69.139:18522"};
+//testnet params(will be populated later)
 
 
 struct CheckpointData {

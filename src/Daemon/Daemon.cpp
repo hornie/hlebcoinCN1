@@ -63,7 +63,7 @@ namespace
   const command_line::arg_descriptor<std::string> arg_config_file = {"config-file", "Specify configuration file", std::string(CryptoNote::CRYPTONOTE_NAME) + ".conf"};
   const command_line::arg_descriptor<bool>        arg_os_version  = {"os-version", ""};
   const command_line::arg_descriptor<std::string> arg_log_file    = {"log-file", "", ""};
-  const command_line::arg_descriptor<int>         arg_log_level   = {"log-level", "", 2}; // info level
+  const command_line::arg_descriptor<int>         arg_log_level   = {"log-level", "", 2}; // info level. advise not to use log_level 4, because you deamon output will be a mess.
   const command_line::arg_descriptor<bool>        arg_console     = {"no-console", "Disable daemon console commands"};
   const command_line::arg_descriptor<bool>        arg_print_genesis_tx = { "print-genesis-tx", "Prints genesis' block tx hex to insert it to config and exits" };
   const command_line::arg_descriptor<std::vector<std::string>> arg_genesis_block_reward_address = { "genesis-block-reward-address", "" };
@@ -102,7 +102,7 @@ currencyBuilder.isBlockexplorer(blockexplorer_mode);
       CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logManager).generateGenesisTransaction(targets);
       std::string tx_hex = Common::toHex(CryptoNote::toBinaryArray(tx));
       std::cout << "Modify this line into your coin configuration file as is: " << std::endl;
-      std::cout << "\"GENESIS_COINBASE_TX_HEX\":\"" << tx_hex << "\"," << std::endl; //jokes on you, it's in Currency.cpp haha
+      std::cout << "\"GENESIS_COINBASE_TX_HEX\":\"" << tx_hex << "\"," << std::endl;
   }
   return;
 }
