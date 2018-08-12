@@ -167,6 +167,7 @@ void TransactionRpcInfo::serialize(CryptoNote::ISerializer& serializer) {
   serializer(transactionHash, "transactionHash");
   serializer(blockIndex, "blockIndex");
   serializer(timestamp, "timestamp");
+  serializer(confirmations, "confirmations");
   serializer(isBase, "isBase");
   serializer(unlockTime, "unlockTime");
   serializer(amount, "amount");

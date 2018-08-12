@@ -47,9 +47,9 @@
 #endif
 
 #ifdef _WIN32
-const std::string DAEMON_FILENAME = "bytecoind.exe";
+const std::string DAEMON_FILENAME = "hlebd.exe";
 #else
-const std::string DAEMON_FILENAME = "bytecoind";
+const std::string DAEMON_FILENAME = "hlebd";
 #endif
 
 using namespace Tests::Common;
@@ -166,7 +166,7 @@ void BaseFunctionalTests::startNode(size_t index) {
     << "rpc-bind-port=" << rpcPort << std::endl
     << "p2p-bind-port=" << p2pPort << std::endl
     << "log-level=4" << std::endl
-    << "log-file=test_bytecoind_" << index << ".log" << std::endl;
+    << "log-file=test_hlebd_" << index << ".log" << std::endl;
 
   switch (m_topology) {
   case Line:
@@ -201,7 +201,7 @@ void BaseFunctionalTests::startNode(size_t index) {
   }
 
 #if defined WIN32
-  std::string commandLine = "start /MIN \"bytecoind" + std::to_string(index) + "\" \"" + daemonPath.string() +
+  std::string commandLine = "start /MIN \"hlebd" + std::to_string(index) + "\" \"" + daemonPath.string() +
     "\" --testnet --data-dir=\"" + dataDirPath + "\" --config-file=daemon.conf";
   LOG_DEBUG(commandLine);
   system(commandLine.c_str());
@@ -213,7 +213,7 @@ void BaseFunctionalTests::startNode(size_t index) {
     close(2);
     std::string dataDir = "--data-dir=" + dataDirPath + "";
     LOG_TRACE(pathToDaemon);
-    if (execl(pathToDaemon.c_str(), "bytecoind", "--testnet", dataDir.c_str(), "--config-file=daemon.conf", NULL) == -1) {
+    if (execl(pathToDaemon.c_str(), "hlebd", "--testnet", dataDir.c_str(), "--config-file=daemon.conf", NULL) == -1) {
       LOG_ERROR(TO_STRING(errno));
     }
     abort();

@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
     }
     Logging::ConsoleLogger logger;
     CryptoNote::CurrencyBuilder currencyBuilder(logger);
-    currencyBuilder.difficultyTarget(120);
+    currencyBuilder.difficultyTarget(60);
     currencyBuilder.difficultyWindow(720);
     currencyBuilder.difficultyCut(60);
     currencyBuilder.difficultyLag(15);
