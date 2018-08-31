@@ -2,6 +2,7 @@ add_definitions(-DSTATICLIB)
 
 include_directories(${CMAKE_SOURCE_DIR}/external/rocksdb/include)
 
+
 file(GLOB_RECURSE BlockchainExplorer BlockchainExplorer/*)
 file(GLOB_RECURSE Common Common/*)
 file(GLOB_RECURSE ConnectivityTool ConnectivityTool/*)
