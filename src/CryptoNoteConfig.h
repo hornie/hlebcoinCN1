@@ -43,8 +43,8 @@ const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0
 //const uint64_t LEET											 = 1337; //Aside from being a thing, multiplies the emission formula. DISABLED!!! Causes block reward mismatch. Using this const is NOT ADVISED!
 //end of the meme emission section
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
-const size_t ZAWY_DIFFICULTY_V2                              = 1;
-const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 0;
+const size_t   ZAWY_DIFFICULTY_V2                            = 1;
+const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 0;
 const unsigned EMISSION_SPEED_FACTOR                         = 20; // das a thicc number
 const uint64_t GENESIS_BLOCK_REWARD                          = 185550000000000000; //premine goes here. Zeros are for decimal point.
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
