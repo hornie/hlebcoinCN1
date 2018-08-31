@@ -739,7 +739,7 @@ m_blockFutureTimeLimitV5(currency.m_blockFutureTimeLimitV5),
 m_moneySupply(currency.m_moneySupply),
 m_memeNumber(currency.m_memeNumber),
 m_bigSmoke(currency.m_bigSmoke),
-m_leet(currency.m_leet)
+m_leet(currency.m_leet),
 m_emissionSpeedFactor(currency.m_emissionSpeedFactor),
 m_rewardBlocksWindow(currency.m_rewardBlocksWindow),
 m_blockGrantedFullRewardZone(currency.m_blockGrantedFullRewardZone),
