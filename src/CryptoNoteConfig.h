@@ -56,8 +56,8 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 9; //it's what is shown after the dot. also influences the block reward, so some cool things can be acheived from fucking with this value
-const uint64_t MINIMUM_FEE                                   = UINT64_C(1000000);
-const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000000);
+const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);
+const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
 
 const uint64_t DIFFICULTY_TARGET                             = 60; // ssssssseconds. maybe sloppy, maybe not, who knows?
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
@@ -106,7 +106,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "HLEBcoin"; //nice name, right?
-const char	   GENESIS_COINBASE_TX_HEX[]					 = "010f01ff000180c0cbf0de97cdc902022606ebf6df8efdcdb51e4c35ca570ffadc85359f90a525c0d373bf5389867f8421016638cd3e80bbeb8421e79bea55f35b652a46ad68aabe6c78706a62159250d44a";
+const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180c0cbf0de97cdc90202a56f6ba51a2f5ee6f1b2a3861556e2726f8acb6626a71f3aa60d7c7222deb57a210186a546c547da0f855c740a138d740815172f13673ec407c81f636ce9cc8635a9";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
