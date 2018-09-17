@@ -738,6 +738,7 @@ m_timestampCheckWindowV5(currency.m_timestampCheckWindowV5),
 m_blockFutureTimeLimitV5(currency.m_blockFutureTimeLimitV5),
 m_moneySupply(currency.m_moneySupply),
 m_memeNumber(currency.m_memeNumber),
+//m_memeNumberRUS(currency.m_memeNumberRUS),
 m_bigSmoke(currency.m_bigSmoke),
 //m_leet(currency.m_leet),
 m_emissionSpeedFactor(currency.m_emissionSpeedFactor),
@@ -797,14 +798,15 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
 
   moneySupply(parameters::MONEY_SUPPLY);
   memeNumber(parameters::MEME_NUMBER);
+//  memeNumberRUS(parameters::MEME_NUMBER_RUS);
   bigSmoke(parameters::BIG_SMOKE);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
-genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
+  genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
 
   rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
-zawyDifficultyBlockIndex(parameters::ZAWY_DIFFICULTY_BLOCK_INDEX);
-zawyDifficultyV2(parameters::ZAWY_DIFFICULTY_V2);
-zawyDifficultyBlockVersion(parameters::ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION);
+  zawyDifficultyBlockIndex(parameters::ZAWY_DIFFICULTY_BLOCK_INDEX);
+  zawyDifficultyV2(parameters::ZAWY_DIFFICULTY_V2);
+  zawyDifficultyBlockVersion(parameters::ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION);
   blockGrantedFullRewardZone(parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
   minerTxBlobReservedSize(parameters::CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE);
 

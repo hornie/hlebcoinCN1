@@ -38,6 +38,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V5          = 11;
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); //boi das a big numbah
 //the meme emission section
+//const uint64_t MEME_NUMBER_RUS								 = 228;
 const uint64_t MEME_NUMBER                                   = 42; //used in emission calculation. in short, coins per block will be divided by that number
 const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0.5) + 1; //213. Two number nines, a number nine large, a number six, with extra dip, a number seven, two number forty fives, one with cheese, and a large soda! on a serious note, messes with emission.
 //const uint64_t LEET											 = 1337; //Aside from being a thing, multiplies the emission formula. DISABLED!!! Causes block reward mismatch. Using this const is NOT ADVISED!
@@ -106,7 +107,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "HLEBcoin"; //nice name, right?
-const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180c0cbf0de97cdc902027dd433c5ee68e0cf1b558aa1c86ff21636b43e71f0227069a86d6c1275bda6f32101371bb60c6a6c0fbc2ac285b57495364d1f8fe8854244dfe736d6b8af91534730";
+const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180c0cbf0de97cdc90202f8fc46984bfcb1443f017974bef70ad12a6e1502bce1a6815eadeeb46440091421016223a21f887434d9a3e09fe8986116f9a8b4b8bfe41d1990c04096f123aec517";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;

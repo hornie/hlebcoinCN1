@@ -49,6 +49,7 @@ public:
 
   uint64_t moneySupply() const { return m_moneySupply; }
   uint64_t memeNumber() const { return m_memeNumber; }
+//  uint64_t memeNumberRUS() const { return m_memeNumberRUS; }
 //  uint64_t leet() const { return m_leet; }
   uint64_t bigSmoke() const { return m_bigSmoke; }
   unsigned int emissionSpeedFactor() const { return m_emissionSpeedFactor; }
@@ -70,13 +71,13 @@ public:
 
   uint64_t difficultyTarget() const { return m_difficultyTarget; }
   size_t difficultyWindow() const { return m_difficultyWindow; }
-size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const;
   size_t difficultyLag() const { return m_difficultyLag; }
-size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion) const;
   size_t difficultyCut() const { return m_difficultyCut; }
-size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion) const;
   size_t difficultyBlocksCount() const { return m_difficultyWindow + m_difficultyLag; }
-size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion) const;
 
   size_t maxBlockSizeInitial() const { return m_maxBlockSizeInitial; }
   uint64_t maxBlockSizeGrowthSpeedNumerator() const { return m_maxBlockSizeGrowthSpeedNumerator; }
@@ -170,6 +171,7 @@ private:
 
   uint64_t m_moneySupply;
   uint64_t m_memeNumber;
+//  uint64_t m_memeNumberRUS;
   uint64_t m_bigSmoke;
 //  uint64_t m_leet;
   unsigned int m_emissionSpeedFactor;
@@ -262,6 +264,7 @@ public:
 
   CurrencyBuilder& moneySupply(uint64_t val) { m_currency.m_moneySupply = val; return *this; }
   CurrencyBuilder& memeNumber(uint64_t val) { m_currency.m_memeNumber = val; return *this; }
+//  CurrencyBuilder& memeNumberRUS(uint64_t val) { m_currency.m_memeNumberRUS = val; return *this; }
   CurrencyBuilder& bigSmoke(uint64_t val) {m_currency.m_bigSmoke = val; return *this; }
 //  CurrencyBuilder& leet(uint64_t val) {m_currency.m_leet = val; return *this; }
   CurrencyBuilder& emissionSpeedFactor(unsigned int val);
