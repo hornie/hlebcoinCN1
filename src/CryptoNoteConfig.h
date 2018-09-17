@@ -106,7 +106,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "HLEBcoin"; //nice name, right?
-const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180c0cbf0de97cdc90202a56f6ba51a2f5ee6f1b2a3861556e2726f8acb6626a71f3aa60d7c7222deb57a210186a546c547da0f855c740a138d740815172f13673ec407c81f636ce9cc8635a9";
+const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180c0cbf0de97cdc902027dd433c5ee68e0cf1b558aa1c86ff21636b43e71f0227069a86d6c1275bda6f32101371bb60c6a6c0fbc2ac285b57495364d1f8fe8854244dfe736d6b8af91534730";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
