@@ -182,7 +182,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
 
-  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor; //*m_leet
+  uint64_t baseReward = ((((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit) >> m_emissionSpeedFactor; //*m_leet
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
@@ -739,7 +739,7 @@ m_blockFutureTimeLimitV5(currency.m_blockFutureTimeLimitV5),
 m_moneySupply(currency.m_moneySupply),
 m_memeNumber(currency.m_memeNumber),
 m_lit(currency.m_lit),
-//m_memeNumberRUS(currency.m_memeNumberRUS),
+m_memeNumberRUS(currency.m_memeNumberRUS),
 m_bigSmoke(currency.m_bigSmoke),
 //m_leet(currency.m_leet),
 m_emissionSpeedFactor(currency.m_emissionSpeedFactor),
@@ -800,7 +800,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   moneySupply(parameters::MONEY_SUPPLY);
   memeNumber(parameters::MEME_NUMBER);
   lit(parameters::LIT);
-//  memeNumberRUS(parameters::MEME_NUMBER_RUS);
+  memeNumberRUS(parameters::MEME_NUMBER_RUS);
   bigSmoke(parameters::BIG_SMOKE);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
   genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
