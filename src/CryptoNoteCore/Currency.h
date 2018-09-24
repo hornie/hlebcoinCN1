@@ -49,6 +49,7 @@ public:
 
   uint64_t moneySupply() const { return m_moneySupply; }
   uint64_t memeNumber() const { return m_memeNumber; }
+  uint64_t lit() const { return m_lit; }
 //  uint64_t memeNumberRUS() const { return m_memeNumberRUS; }
 //  uint64_t leet() const { return m_leet; }
   uint64_t bigSmoke() const { return m_bigSmoke; }
@@ -171,6 +172,7 @@ private:
 
   uint64_t m_moneySupply;
   uint64_t m_memeNumber;
+  uint64_t m_lit;
 //  uint64_t m_memeNumberRUS;
   uint64_t m_bigSmoke;
 //  uint64_t m_leet;
@@ -264,6 +266,7 @@ public:
 
   CurrencyBuilder& moneySupply(uint64_t val) { m_currency.m_moneySupply = val; return *this; }
   CurrencyBuilder& memeNumber(uint64_t val) { m_currency.m_memeNumber = val; return *this; }
+  CurrencyBuilder& lit(uint64_t val) { m_currency.m_lit = val; return *this; }
 //  CurrencyBuilder& memeNumberRUS(uint64_t val) { m_currency.m_memeNumberRUS = val; return *this; }
   CurrencyBuilder& bigSmoke(uint64_t val) {m_currency.m_bigSmoke = val; return *this; }
 //  CurrencyBuilder& leet(uint64_t val) {m_currency.m_leet = val; return *this; }
