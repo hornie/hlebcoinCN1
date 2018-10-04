@@ -184,7 +184,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   
   uint64_t rewardCalc = (((((m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit);
 
-  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / rewardCalc) >> m_emissionSpeedFactor; //*m_leet, *m_lit. unfortunately these do not work. maybe weill be used later somewhere else
+  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / rewardCalc) >> m_emissionSpeedFactor; //*m_leet, *m_lit. unfortunately these do not work. maybe will be used later somewhere else
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
