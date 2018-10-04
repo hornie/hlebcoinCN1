@@ -801,7 +801,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
 
   moneySupply(parameters::MONEY_SUPPLY);
   memeNumber(parameters::MEME_NUMBER);
-//  lit(parameters::LIT);
+  lit(parameters::LIT);
   memeNumberRUS(parameters::MEME_NUMBER_RUS);
   bigSmoke(parameters::BIG_SMOKE);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
