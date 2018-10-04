@@ -182,9 +182,9 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
   
-  uint64_t rewardCalc = (((((m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit);
+  uint64_t rewardCalc = (((((m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit); //holy fuck, if this shit works ima be surprised af. at the end cpb should be around 400 something +
 
-  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / rewardCalc) >> m_emissionSpeedFactor; //*m_leet, *m_lit. unfortunately these do not work. maybe will be used later somewhere else
+  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / rewardCalc) >> m_emissionSpeedFactor; //*m_leet. unfortunately this piece of crap does not work. maybe will be used later somewhere else
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;

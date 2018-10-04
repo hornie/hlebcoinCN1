@@ -38,9 +38,9 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V5          = 11;
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); //boi das a big numbah
 //the meme emission section
-const uint64_t MEME_NUMBER_RUS								 = 228; //controls the emission
-const uint64_t LIT											 = 100; //Change it, I dare you
-const uint64_t MEME_NUMBER                                   = 42; //used in emission calculation. in short, coins per block will be divided by that number
+const uint64_t MEME_NUMBER_RUS								 = 228; //controls the emission, CYKA BLYAD. DO NOT TOUCH SUKA!
+const uint64_t LIT											 = 100; //😤😤😤👌👌👌🔥🔥🔥💯💯💯
+const uint64_t MEME_NUMBER                                   = 42; //feel old yet?
 const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0.5) + 1; //213. Two number nines, a number nine large, a number six, with extra dip, a number seven, two number forty fives, one with cheese, and a large soda! on a serious note, messes with emission.
 //const uint64_t LEET											 = 1337; //Aside from being a thing, multiplies the emission formula. DISABLED!!! Causes block reward mismatch. Using this const is NOT ADVISED!
 //end of the meme emission section
