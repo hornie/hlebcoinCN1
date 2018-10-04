@@ -182,10 +182,10 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
   
-  uint64_t m_rewardCalc = m_blockRewardCalculation; //holy fuck, if this shit works ima be surprised af. dis be 44.95...
+  uint64_t m_rewardCalc = m_blockRewardCalculation; //holy fuck, if this shit works ima be surprised af
   if (m_blockRewardCalculation == 1) {
-	  m_rewardCalc = (((m_memeNumber) / m_bigSmoke) * m_memeNumberRUS);
-  } else if (m_blockRewardCalculation == 1) {
+	  m_rewardCalc = (((m_memeNumber) / m_bigSmoke) * m_memeNumberRUS); //dis be 44.95... etc.
+  } else if (m_blockRewardCalculation == 0) {
 	  m_rewardCalc = 1;
   }
   
@@ -813,7 +813,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   bigSmoke(parameters::BIG_SMOKE);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
   genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
-  blockRewardCalculation(parameters::BLOCK_REWARD_CALCULATION);
+  blockRewardCalculation(parameters::ADVANCED_BLOCK_REWARD_CALCULATION);
 
   rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
   zawyDifficultyBlockIndex(parameters::ZAWY_DIFFICULTY_BLOCK_INDEX);

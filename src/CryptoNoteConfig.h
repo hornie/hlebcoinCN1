@@ -45,8 +45,8 @@ const uint64_t MEME_NUMBER_RUS								 = 228; //controls the emission, CYKA BLYA
 const uint64_t LIT											 = 100; //😤😤😤👌👌👌🔥🔥🔥💯💯💯 DISABLED!!! It doesn't do anything atm.
 const uint64_t MEME_NUMBER                                   = 42; //feel old yet?
 const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0.5) + 1; //213. Two number nines, a number nine large, a number six, with extra dip, a number seven, two number forty fives, one with cheese, and a large soda! on a serious note, messes with emission.
-//const uint64_t LEET											 = 1337; //Aside from being a thing, multiplies the emission formula. DISABLED!!! Causes block reward mismatch. Using this const is NOT ADVISED!
-const uint64_t BLOCK_REWARD_CALCULATION						 = 1;
+//const uint64_t LEET											 = 1337; //Aside from being a thing, multiplies the emission formula. DISABLED!!! It's commented out everywhere.
+const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; // 0 - return to vanilla emission, 1 - be a man, and stick with this abomination.
 //end of the meme emission section
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t   ZAWY_DIFFICULTY_V2                            = 1;
