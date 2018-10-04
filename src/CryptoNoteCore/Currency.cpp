@@ -181,8 +181,10 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   uint64_t fee, uint64_t& reward, int64_t& emissionChange) const {
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
+  
+  uint64_t rewardCalc = (((((m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit);
 
-  uint64_t baseReward = ((((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit) >> m_emissionSpeedFactor; //*m_leet
+  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / rewardCalc) >> m_emissionSpeedFactor; //*m_leet, *m_lit. unfortunately these do not work. maybe weill be used later somewhere else
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
@@ -799,7 +801,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
 
   moneySupply(parameters::MONEY_SUPPLY);
   memeNumber(parameters::MEME_NUMBER);
-  lit(parameters::LIT);
+//  lit(parameters::LIT);
   memeNumberRUS(parameters::MEME_NUMBER_RUS);
   bigSmoke(parameters::BIG_SMOKE);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
