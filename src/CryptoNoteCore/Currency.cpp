@@ -182,9 +182,14 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
   
-  uint64_t rewardCalc = (((((m_memeNumber) / m_bigSmoke) * m_lit) * m_memeNumberRUS) / m_lit); //holy fuck, if this shit works ima be surprised af. at the end cpb should be around 400 something +
-
-  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / rewardCalc) >> m_emissionSpeedFactor; //*m_leet. unfortunately this piece of crap does not work. maybe will be used later somewhere else
+  uint64_t m_rewardCalc = m_blockRewardCalculation; //holy fuck, if this shit works ima be surprised af. dis be 44.95...
+  if (m_blockRewardCalculation == 1) {
+	  m_rewardCalc = (((m_memeNumber) / m_bigSmoke) * m_memeNumberRUS);
+  } else if (m_blockRewardCalculation == 1) {
+	  m_rewardCalc = 1;
+  }
+  
+  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / m_rewardCalc) >> m_emissionSpeedFactor; //*m_leet. unfortunately this piece of crap does not work. maybe will be used later somewhere else
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
@@ -778,6 +783,8 @@ m_blocksFileName(currency.m_blocksFileName),
 m_blockIndexesFileName(currency.m_blockIndexesFileName),
 m_txPoolFileName(currency.m_txPoolFileName),
 m_genesisBlockReward(currency.m_genesisBlockReward),
+m_blockRewardCalculation(currency.m_blockRewardCalculation),
+m_rewardCalc(currency.m_rewardCalc),
 m_zawyDifficultyBlockIndex(currency.m_zawyDifficultyBlockIndex),
 m_zawyDifficultyV2(currency.m_zawyDifficultyV2),
 m_zawyDifficultyBlockVersion(currency.m_zawyDifficultyBlockVersion),
@@ -806,6 +813,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   bigSmoke(parameters::BIG_SMOKE);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
   genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
+  blockRewardCalculation(parameters::BLOCK_REWARD_CALCULATION);
 
   rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
   zawyDifficultyBlockIndex(parameters::ZAWY_DIFFICULTY_BLOCK_INDEX);

@@ -55,6 +55,8 @@ public:
   uint64_t bigSmoke() const { return m_bigSmoke; }
   unsigned int emissionSpeedFactor() const { return m_emissionSpeedFactor; }
   uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
+  uint64_t blockRewardCalculation() const { return m_blockRewardCalculation; }
+  uint64_t rewardCalc() const { return m_rewardCalc; }
 
   size_t rewardBlocksWindow() const { return m_rewardBlocksWindow; }
   uint32_t zawyDifficultyBlockIndex() const { return m_zawyDifficultyBlockIndex; }
@@ -178,6 +180,8 @@ private:
 //  uint64_t m_leet;
   unsigned int m_emissionSpeedFactor;
   uint64_t m_genesisBlockReward;
+  uint64_t m_blockRewardCalculation;
+  uint64_t m_rewardCalc;
 
   size_t m_rewardBlocksWindow;
   uint32_t m_zawyDifficultyBlockIndex;
@@ -272,6 +276,8 @@ public:
 //  CurrencyBuilder& leet(uint64_t val) {m_currency.m_leet = val; return *this; }
   CurrencyBuilder& emissionSpeedFactor(unsigned int val);
   CurrencyBuilder& genesisBlockReward(uint64_t val) { m_currency.m_genesisBlockReward = val; return *this; }
+  CurrencyBuilder& blockRewardCalculation(uint64_t val) { m_currency.m_blockRewardCalculation = val; return *this; }
+  CurrencyBuilder& rewardCalc(uint64_t val) { m_currency.m_rewardCalc = val; return *this; }  
 
   CurrencyBuilder& rewardBlocksWindow(size_t val) { m_currency.m_rewardBlocksWindow = val; return *this; }
   CurrencyBuilder& zawyDifficultyBlockIndex(uint32_t val) { m_currency.m_zawyDifficultyBlockIndex = val; return *this; }
