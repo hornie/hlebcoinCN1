@@ -181,24 +181,18 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   uint64_t fee, uint64_t& reward, int64_t& emissionChange) const {
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
-/* it did not work, it did  not  work  
-  uint64_t m_rewardCalc = m_blockRewardCalculation; //holy fuck, if this shit works ima be surprised af
+  
+  uint64_t m_rewardCalc; //holy fuck, if this shit works ima be surprised af
   if (m_blockRewardCalculation == 1) {
 	  m_rewardCalc = (((m_memeNumber) / m_bigSmoke) * m_memeNumberRUS); //dis be 44.95... etc.
   } else if (m_blockRewardCalculation == 0) {
 	  m_rewardCalc = 1;
   }
-*/  
-  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_memeNumberRUS) >> m_emissionSpeedFactor; //*m_leet. unfortunately this piece of crap does not work. maybe will be used later somewhere else
+  
+  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / m_rewardCalc) >> m_emissionSpeedFactor; //*m_leet. unfortunately this piece of crap does not work. maybe will be used later somewhere else
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
-  } else if (m_blockRewardCalculation == 1) {
-	  baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_memeNumberRUS) >> m_emissionSpeedFactor; //dis be 44.95... etc.
-	  std::cout << "The advanced block reward calculation is now ON" << std::endl;
-  } else if (m_blockRewardCalculation == 0) {
-	  baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
-	  std::cout << "The advanced block reward calculation is now OFF" << std::endl;
   }
 
   size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
