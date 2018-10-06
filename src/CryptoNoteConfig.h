@@ -21,7 +21,7 @@
 #include <cstdint>
 #include <limits>
 
-//#pragma warning(disable:4244)
+//#pragma warning(disable:4244) //use that to diable all the BIG_SMOKE warnings. doesnt sit well with linux tho.
 
 
 namespace CryptoNote {
@@ -40,7 +40,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V5          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); //boi das a big numbah
-//the meme emission section
+//the meme emission section. I would advise you not to touch this if you don't know what you're doing.
 const uint64_t MEME_NUMBER_RUS								 = 228; //controls the emission, CYKA BLYAD. DO NOT TOUCH SUKA!
 const uint64_t LIT											 = 100; //😤😤😤👌👌👌🔥🔥🔥💯💯💯 DISABLED!!! It doesn't do anything atm.
 const uint64_t MEME_NUMBER                                   = 42; //feel old yet?
