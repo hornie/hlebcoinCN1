@@ -177,6 +177,8 @@ uint32_t Currency::upgradeHeight(uint8_t majorVersion) const {
   }
 }
 
+
+
 bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins,
   uint64_t fee, uint64_t& reward, int64_t& emissionChange) const {
   assert(alreadyGeneratedCoins <= m_moneySupply);
@@ -184,7 +186,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   
   uint64_t m_rewardCalc; //holy fuck, if this shit works ima be surprised af
   if (m_blockRewardCalculation == 1) {
-	  m_rewardCalc = (((m_memeNumber) / m_bigSmoke) * m_memeNumberRUS); //dis be 44.95... etc.
+	  m_rewardCalc = ((m_memeNumber / m_bigSmoke) * m_memeNumberRUS); //dis be 44.95... etc.
   } else if (m_blockRewardCalculation == 0) {
 	  m_rewardCalc = 1;
   }
