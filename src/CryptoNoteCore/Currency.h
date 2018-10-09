@@ -51,7 +51,6 @@ public:
   uint64_t memeNumber() const { return m_memeNumber; }
   uint64_t lit() const { return m_lit; }
   uint64_t memeNumberRUS() const { return m_memeNumberRUS; }
-//  uint64_t leet() const { return m_leet; }
   uint64_t bigSmoke() const { return m_bigSmoke; }
   unsigned int emissionSpeedFactor() const { return m_emissionSpeedFactor; }
   uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
@@ -177,7 +176,6 @@ private:
   uint64_t m_lit;
   uint64_t m_memeNumberRUS;
   uint64_t m_bigSmoke;
-//  uint64_t m_leet;
   unsigned int m_emissionSpeedFactor;
   uint64_t m_genesisBlockReward;
   uint64_t m_blockRewardCalculation;
@@ -273,7 +271,6 @@ public:
   CurrencyBuilder& lit(uint64_t val) { m_currency.m_lit = val; return *this; }
   CurrencyBuilder& memeNumberRUS(uint64_t val) { m_currency.m_memeNumberRUS = val; return *this; }
   CurrencyBuilder& bigSmoke(uint64_t val) {m_currency.m_bigSmoke = val; return *this; }
-//  CurrencyBuilder& leet(uint64_t val) {m_currency.m_leet = val; return *this; }
   CurrencyBuilder& emissionSpeedFactor(unsigned int val);
   CurrencyBuilder& genesisBlockReward(uint64_t val) { m_currency.m_genesisBlockReward = val; return *this; }
   CurrencyBuilder& blockRewardCalculation(uint64_t val) { m_currency.m_blockRewardCalculation = val; return *this; }

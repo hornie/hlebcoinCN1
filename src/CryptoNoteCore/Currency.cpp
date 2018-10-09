@@ -183,15 +183,15 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   uint64_t fee, uint64_t& reward, int64_t& emissionChange) const {
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
-  
+/* It did not work and I gave up. For now...  
   uint64_t m_rewardCalc; //holy fuck, if this shit works ima be surprised af
   if (m_blockRewardCalculation == 1) {
 	  m_rewardCalc = ((m_memeNumber / m_bigSmoke) * m_memeNumberRUS); //dis be 44.95... etc.
   } else if (m_blockRewardCalculation == 0) {
 	  m_rewardCalc = 1;
   }
-  
-  uint64_t baseReward = ((m_moneySupply - alreadyGeneratedCoins) / m_rewardCalc) >> m_emissionSpeedFactor; //*m_leet. unfortunately this piece of crap does not work. maybe will be used later somewhere else
+*/  
+  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_memeNumberRUS) >> m_emissionSpeedFactor;
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
@@ -750,7 +750,6 @@ m_memeNumber(currency.m_memeNumber),
 m_lit(currency.m_lit),
 m_memeNumberRUS(currency.m_memeNumberRUS),
 m_bigSmoke(currency.m_bigSmoke),
-//m_leet(currency.m_leet),
 m_emissionSpeedFactor(currency.m_emissionSpeedFactor),
 m_rewardBlocksWindow(currency.m_rewardBlocksWindow),
 m_blockGrantedFullRewardZone(currency.m_blockGrantedFullRewardZone),

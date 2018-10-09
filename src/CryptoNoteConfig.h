@@ -45,13 +45,12 @@ const uint64_t MEME_NUMBER_RUS								 = 228; //controls the emission, CYKA BLYA
 const uint64_t LIT											 = 100; //😤😤😤👌👌👌🔥🔥🔥💯💯💯 DISABLED!!! It doesn't do anything atm.
 const uint64_t MEME_NUMBER                                   = 42; //feel old yet?
 const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0.5) + 1; //213. Two number nines, a number nine large, a number six, with extra dip, a number seven, two number forty fives, one with cheese, and a large soda! on a serious note, messes with emission.
-//const uint64_t LEET											 = 1337; //Aside from being a thing, multiplies the emission formula. DISABLED!!! It's commented out everywhere.
-const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; // 0 - return to vanilla emission, 1 - be a man, and stick with this abomination.
+const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; // 0 - return to vanilla emission, 1 - be a man, and stick with this abomination. Doesn't do anything atm.
 //end of the meme emission section
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t   ZAWY_DIFFICULTY_V2                            = 1;
 const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 0;
-const unsigned EMISSION_SPEED_FACTOR                         = 20; // das a thicc number
+const unsigned EMISSION_SPEED_FACTOR                         = 19; // das a thicc number
 const uint64_t GENESIS_BLOCK_REWARD                          = 185550000000000000; //premine goes here. Zeros are for decimal point.
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
