@@ -14,6 +14,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_CURRENT_BIN
 
 project(HLEBcoin)
 set (BOOST_ROOT "D:/boost_1_66_0")
+set(BOOST_LIBRARYDIR ${BOOST_ROOT}/stage/lib/)
 include_directories(include src external "${CMAKE_CURRENT_BINARY_DIR}/version")
 if(APPLE)
   include_directories(SYSTEM /usr/include/malloc)
