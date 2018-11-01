@@ -191,7 +191,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
 	  m_rewardCalc = 1;
   }
 */  
-  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_memeNumberRUS) >> m_emissionSpeedFactor;
+  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * 228) >> m_emissionSpeedFactor; //m_memeNumberRUS
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;

@@ -41,8 +41,8 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V5          = 11;
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); //boi das a big numbah
 //the meme emission section. I would advise you not to touch this if you don't know what you're doing.
-const uint64_t MEME_NUMBER_RUS								 = 228; //controls the emission, CYKA BLYAD. DO NOT TOUCH SUKA!
-const uint64_t LIT											 = 100; //😤😤😤👌👌👌🔥🔥🔥💯💯💯 DISABLED!!! It doesn't do anything atm.
+const uint64_t MEME_NUMBER_RUS								 = 228; //DISABLED!!! Casues difficulty overhead. controls the emission, CYKA BLYAD. DO NOT TOUCH SUKA!
+const uint64_t LIT											 = 100; //DISABLED!!! It doesn't do anything atm.
 const uint64_t MEME_NUMBER                                   = 42; //feel old yet?
 const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0.5) + 1; //213. Two number nines, a number nine large, a number six, with extra dip, a number seven, two number forty fives, one with cheese, and a large soda! on a serious note, messes with emission.
 const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; // 0 - return to vanilla emission, 1 - be a man, and stick with this abomination. Doesn't do anything atm.
@@ -61,8 +61,8 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 9; //it's what is shown after the dot. also influences the block reward, so some cool things can be acheived from fucking with this value
-const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);
-const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
+const uint64_t MINIMUM_FEE                                   = UINT64_C(1000000);
+const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000000);
 
 const uint64_t DIFFICULTY_TARGET                             = 60; // ssssssseconds. maybe sloppy, maybe not, who knows?
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
