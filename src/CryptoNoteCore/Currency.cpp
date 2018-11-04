@@ -191,7 +191,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
 	  m_rewardCalc = 1;
   }
 */  
-  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor; //m_lit
+  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * 100) >> m_emissionSpeedFactor; //m_lit
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
@@ -208,7 +208,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   uint64_t penalizedFee = blockMajorVersion >= BLOCK_MAJOR_VERSION_2 ? getPenalizedAmount(fee, medianSize, currentBlockSize) : fee;
 
   emissionChange = penalizedBaseReward - (fee - penalizedFee);
-  reward = m_memeNumberRUS * (penalizedBaseReward + penalizedFee); //idk
+  reward = penalizedBaseReward + penalizedFee;
 
   return true;
 }

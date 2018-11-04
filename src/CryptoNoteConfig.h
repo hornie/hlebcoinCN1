@@ -49,7 +49,7 @@ const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; //DISABLED!!! 0 - retur
 //end of the meme emission section
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t   ZAWY_DIFFICULTY_V2                            = 1;
-const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 5;
+const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 0;
 const unsigned EMISSION_SPEED_FACTOR                         = 19; // das a thicc number
 const uint64_t GENESIS_BLOCK_REWARD                          = 185550000000000000; //premine goes here. Zeros are for decimal point.
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
