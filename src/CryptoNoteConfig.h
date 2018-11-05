@@ -64,7 +64,7 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 9; //it's what is
 const uint64_t MINIMUM_FEE                                   = UINT64_C(1000000);
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000000);
 
-const uint64_t DIFFICULTY_TARGET                             = 60; // ssssssseconds. maybe sloppy, maybe not, who knows?
+const uint64_t DIFFICULTY_TARGET                             = 120; // ssssssseconds. maybe sloppy, maybe not, who knows?
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 17;
 const size_t   DIFFICULTY_WINDOW_V1                          = 720;
