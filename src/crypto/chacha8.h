@@ -1,4 +1,8 @@
-#pragma once
+// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
+// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2018, The TurtleCoin Developers
+// 
+// Please see the included LICENSE file for more information.#pragma once
 
 #include <stdint.h>
 #include <stddef.h>
@@ -7,6 +11,7 @@
 #define CHACHA8_IV_SIZE 8
 
 #if defined(__cplusplus)
+#pragma once
 #include <memory.h>
 #include <string>
 
@@ -22,11 +27,6 @@ namespace Crypto {
 #pragma pack(push, 1)
   struct chacha8_key {
     uint8_t data[CHACHA8_KEY_SIZE];
-
-    ~chacha8_key()
-    {
-      memset(data, 0, sizeof(data));
-    }
   };
 
   // MS VC 2012 doesn't interpret `class chacha8_iv` as POD in spite of [9.0.10], so it is a struct
@@ -44,7 +44,7 @@ namespace Crypto {
   inline void generate_chacha8_key(Crypto::cn_context &context, const std::string& password, chacha8_key& key) {
     static_assert(sizeof(chacha8_key) <= sizeof(Hash), "Size of hash must be at least that of chacha8_key");
     Hash pwd_hash;
-    cn_slow_hash_v6(context, password.data(), password.size(), pwd_hash);
+    cn_slow_hash_v0(context, password.data(), password.size(), pwd_hash);
     memcpy(&key, &pwd_hash, sizeof(key));
     memset(&pwd_hash, 0, sizeof(pwd_hash));
   }
