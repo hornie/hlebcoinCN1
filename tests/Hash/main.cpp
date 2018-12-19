@@ -48,6 +48,10 @@ extern "C" {
   static void cn_v7(const void *data, size_t length, char *hash) {
     cn_slow_hash_v7(*context, data, length, *reinterpret_cast<chash *>(hash));
   }
+  
+  static void cn_v8(const void *data, size_t length, char *hash) {
+    cn_slow_hash_v8(*context, data, length, *reinterpret_cast<chash *>(hash));
+  }
 
   static void cn_lite_v0(const void *data, size_t length, char *hash) {
     cn_lite_slow_hash_v0(*context, data, length, *reinterpret_cast<chash *>(hash));
@@ -65,6 +69,7 @@ struct hash_func {
 } hashes[] = {{"fast", Crypto::cn_fast_hash},
               {"cryptonight-v6", cn_v6},
               {"cryptonight-v7", cn_v7},
+			  {"cryptonight-v8", cn_v8},
               {"cryptonight-lite-v0", cn_lite_v0},
               {"cryptonight-lite-v1", cn_lite_v1},
               {"tree", hash_tree},
@@ -95,7 +100,7 @@ int main(int argc, char *argv[]) {
       break;
     }
   }
-  if (f == cn_v6 || f == cn_v7 || f == cn_lite_v0 || f == cn_lite_v1 ) {
+  if (f == cn_v6 || f == cn_v7 || f == cn_v8 || f == cn_lite_v0 || f == cn_lite_v1 ) {
     context = new Crypto::cn_context();
   }
   input.open(argv[2], ios_base::in);
