@@ -42,27 +42,27 @@ extern "C" {
   }
 
   static void cn_v0(const void *data, size_t length, char *hash) {
-    cn_slow_hash_v0(*context, data, length, *reinterpret_cast<chash *>(hash));
+    cn_slow_hash_v0(data, length, *reinterpret_cast<chash *>(hash));
   }
 
   static void cn_v1(const void *data, size_t length, char *hash) {
-    cn_slow_hash_v1(*context, data, length, *reinterpret_cast<chash *>(hash));
+    cn_slow_hash_v1(data, length, *reinterpret_cast<chash *>(hash));
   }
   
   static void cn_v2(const void *data, size_t length, char *hash) {
-    cn_slow_hash_v2(*context, data, length, *reinterpret_cast<chash *>(hash));
+    cn_slow_hash_v2(data, length, *reinterpret_cast<chash *>(hash));
   }
 
   static void cn_lite_v0(const void *data, size_t length, char *hash) {
-    cn_lite_slow_hash_v0(*context, data, length, *reinterpret_cast<chash *>(hash));
+    cn_lite_slow_hash_v0(data, length, *reinterpret_cast<chash *>(hash));
   }
 
   static void cn_lite_v1(const void *data, size_t length, char *hash) {
-    cn_lite_slow_hash_v1(*context, data, length, *reinterpret_cast<chash *>(hash));
+    cn_lite_slow_hash_v1(data, length, *reinterpret_cast<chash *>(hash));
   }
   
   static void cn_lite_v2(const void *data, size_t length, char *hash) {
-    cn_lite_slow_hash_v2(*context, data, length, *reinterpret_cast<chash *>(hash));
+    cn_lite_slow_hash_v2(data, length, *reinterpret_cast<chash *>(hash));
   }
 }
 

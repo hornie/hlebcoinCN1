@@ -15,6 +15,8 @@
 #include "hash-ops.h"
 #include "oaes_lib.h"
 #include "variant2_int_sqrt.h"
+#include "aesb.h"
+
 
 // Standard Crypto Definitions
 #define AES_BLOCK_SIZE         16
@@ -36,8 +38,8 @@
 #define CN_LIGHT_INIT          (MEMORY_Light / INIT_SIZE_BYTE)
 #define CN_LIGHT_AES_INIT      (MEMORY_Light / AES_BLOCK_SIZE)
 
-extern int aesb_single_round(const uint8_t *in, uint8_t*out, const uint8_t *expandedKey);
-extern int aesb_pseudo_round(const uint8_t *in, uint8_t *out, const uint8_t *expandedKey);
+//extern int aesb_single_round(const uint8_t *in, uint8_t*out, const uint8_t *expandedKey);
+//extern int aesb_pseudo_round(const uint8_t *in, uint8_t *out, const uint8_t *expandedKey);
 
 #define VARIANT1_1(p) \
   do if (variant == 1) \

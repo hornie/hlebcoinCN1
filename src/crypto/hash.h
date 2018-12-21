@@ -45,12 +45,12 @@ namespace Crypto {
   private:
 
     void *data;
-    friend inline void cn_slow_hash_v0(cn_context &, const void *, size_t, Hash &);
-    friend inline void cn_slow_hash_v1(cn_context &, const void *, size_t, Hash &);
-	friend inline void cn_slow_hash_v2(cn_context &, const void *, size_t, Hash &);
-    friend inline void cn_lite_slow_hash_v0(cn_context &, const void *, size_t, Hash &);
-    friend inline void cn_lite_slow_hash_v1(cn_context &, const void *, size_t, Hash &);
-	friend inline void cn_lite_slow_hash_v2(cn_context &, const void *, size_t, Hash &);
+    friend inline void cn_slow_hash_v0(const void *, size_t, Hash &);
+    friend inline void cn_slow_hash_v1(const void *, size_t, Hash &);
+	friend inline void cn_slow_hash_v2(const void *, size_t, Hash &);
+    friend inline void cn_lite_slow_hash_v0(const void *, size_t, Hash &);
+    friend inline void cn_lite_slow_hash_v1(const void *, size_t, Hash &);
+	friend inline void cn_lite_slow_hash_v2(const void *, size_t, Hash &);
   };
 
   inline void cn_slow_hash_v0(const void *data, size_t length, Hash &hash) {

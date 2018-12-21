@@ -8,3 +8,4 @@ Win32
 .vs
 *.user
 CMakeSettings.json
+testbuild
