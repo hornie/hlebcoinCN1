@@ -66,7 +66,7 @@ void parseDaemonAddress(const std::string& daemonAddress, std::string& daemonHos
 MiningConfig::MiningConfig(): help(false) {
   cmdOptions.add_options()
       ("help,h", "produce this help message and exit")
-      ("address", po::value<std::string>(), "Valid cryptonote miner's address")
+      ("address", po::value<std::string>(), "Valid HLEBcoin miner's address")
       ("daemon-host", po::value<std::string>()->default_value(DEFAULT_DAEMON_HOST), "Daemon host")
       ("daemon-rpc-port", po::value<uint16_t>()->default_value(static_cast<uint16_t>(RPC_DEFAULT_PORT)), "Daemon's RPC port")
       ("daemon-address", po::value<std::string>(), "Daemon host:port. If you use this option you must not use --daemon-host and --daemon-port options")

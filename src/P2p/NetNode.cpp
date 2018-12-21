@@ -1143,7 +1143,7 @@ std::string print_peerlist_to_string(const std::list<PeerlistEntry>& pl) {
     context.version = arg.node_data.version;
 
     if (arg.node_data.network_id != m_network_id) {
-      logger(Logging::INFO) << context << "WRONG NETWORK AGENT CONNECTED! id=" << arg.node_data.network_id;
+      logger(Logging::INFO) << context << "WRONG NETWORK AGENT CONNECTED! Press F to pay respects. id=" << arg.node_data.network_id;
       context.m_state = CryptoNoteConnectionContext::state_shutdown;
       return 1;
     }
