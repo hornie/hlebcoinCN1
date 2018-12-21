@@ -707,6 +707,7 @@ bool Currency::checkProofOfWork(Crypto::cn_context& context, const CachedBlock& 
   case BLOCK_MAJOR_VERSION_3:
   case BLOCK_MAJOR_VERSION_4:
   case BLOCK_MAJOR_VERSION_5:
+  case BLOCK_MAJOR_VERSION_6:
     return checkProofOfWorkV2(context, block, currentDiffic);
   }
 
