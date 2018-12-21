@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
       break;
     }
   }
-  if (f == cn_v0 || f == cn_v1 || f == cn_v2 || f == cn_lite_v0 || f == cn_lite_v1 ) {
+  if (f == cn_v0 || f == cn_v1 || f == cn_v2 || f == cn_lite_v0 || f == cn_lite_v1 || f == cn_lite_v2 ) {
     context = new Crypto::cn_context();
   }
   input.open(argv[2], ios_base::in);

@@ -683,7 +683,7 @@ void slow_hash_free_state(void)
  * @param length the length in bytes of the data
  * @param hash a pointer to a buffer in which the final 256 bit hash will be stored
  */
-void cn_slow_hash(const void *data, size_t length, char *hash, int light, int variant, int prehashed)
+void cn_slow_hash(const void *data, size_t length,unsigned char *hash, int light, int variant, int prehashed)
 {
 	size_t init_rounds = (light ? CN_LIGHT_INIT : CN_INIT);
 	size_t aes_rounds = (light ? ITER_Light_Divided : ITER_Divided);
@@ -1055,7 +1055,7 @@ STATIC INLINE void aligned_free(void *ptr)
 }
 #endif /* FORCE_USE_HEAP */
 
-void cn_slow_hash(const void *data, size_t length, char *hash, int light, int variant, int prehashed)
+void cn_slow_hash(const void *data, size_t length,unsigned char *hash, int light, int variant, int prehashed)
 {
 	size_t init_rounds = (light ? CN_LIGHT_INIT : CN_INIT);
 	size_t aes_rounds = (light ? ITER_Light_Divided : ITER_Divided);
@@ -1274,7 +1274,7 @@ STATIC INLINE void xor_blocks(uint8_t* a, const uint8_t* b)
   U64(a)[1] ^= U64(b)[1];
 }
 
-void cn_slow_hash(const void *data, size_t length, char *hash, int light, int variant, int prehashed)
+void cn_slow_hash(const void *data, size_t length,unsigned char *hash, int light, int variant, int prehashed)
 {
 	size_t init_rounds = (light ? CN_LIGHT_INIT : CN_INIT);
 	size_t aes_rounds = (light ? ITER_Light_Divided : ITER_Divided);
@@ -1479,7 +1479,7 @@ union cn_slow_hash_state {
 };
 #pragma pack(pop)
 
-void cn_slow_hash(const void *data, size_t length, char *hash, int light, int variant, int prehashed) {
+void cn_slow_hash(const void *data, size_t length,unsigned char *hash, int light, int variant, int prehashed) {
   size_t init_rounds = (light ? CN_LIGHT_INIT : CN_INIT);
   size_t aes_rounds = (light ? ITER_Light_Divided : ITER_Divided);
   size_t aes_init = (light ? CN_LIGHT_AES_INIT : CN_AES_INIT);
