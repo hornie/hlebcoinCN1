@@ -663,7 +663,7 @@ bool Currency::checkProofOfWorkV1(Crypto::cn_context& context, const CachedBlock
     return false;
   }
 
-  return check_hash(block.getBlockLongHash(context), currentDifficulty);
+  return check_hash(block.getBlockLongHash(), currentDifficulty);
 }
 
 bool Currency::checkProofOfWorkV2(Crypto::cn_context& context, const CachedBlock& cachedBlock, Difficulty currentDifficulty) const {
@@ -672,7 +672,7 @@ bool Currency::checkProofOfWorkV2(Crypto::cn_context& context, const CachedBlock
     return false;
   }
 
-  if (!check_hash(cachedBlock.getBlockLongHash(context), currentDifficulty)) {
+  if (!check_hash(cachedBlock.getBlockLongHash(), currentDifficulty)) {
     return false;
   }
 
