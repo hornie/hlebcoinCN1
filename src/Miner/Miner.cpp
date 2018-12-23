@@ -104,7 +104,7 @@ void Miner::workerFunc(const BlockTemplate& blockTemplate, Difficulty difficulty
 
     while (m_state == MiningState::MINING_IN_PROGRESS) {
       CachedBlock cachedBlock(block);
-      Crypto::Hash hash = cachedBlock.getBlockLongHash(cryptoContext);
+      Crypto::Hash hash = cachedBlock.getBlockLongHash();
       if (check_hash(hash, difficulty)) {
         m_logger(Logging::INFO) << "Holy shit! Found block for difficulty " << difficulty;
 

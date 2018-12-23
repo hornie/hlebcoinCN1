@@ -300,7 +300,7 @@ namespace CryptoNote
 
             CachedBlock cb(lb);
             try {
-              h = cb.getBlockLongHash(localctx);
+              h = cb.getBlockLongHash();
             } catch (std::exception&) {
               return;
             }
@@ -328,7 +328,7 @@ namespace CryptoNote
         Crypto::Hash h;
         CachedBlock cb(bl);
         try {
-          h = cb.getBlockLongHash(context);
+          h = cb.getBlockLongHash();
         } catch (std::exception&) {
           return false;
         }
@@ -410,7 +410,7 @@ namespace CryptoNote
       CachedBlock cb(b);
       if (!m_stop) {
         try {
-          h = cb.getBlockLongHash(context);
+          h = cb.getBlockLongHash();
         } catch (std::exception& e) {
           logger(ERROR) << "getBlockLongHash failed: " << e.what();
           m_stop = true;

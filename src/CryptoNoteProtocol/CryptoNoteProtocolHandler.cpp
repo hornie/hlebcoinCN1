@@ -577,7 +577,7 @@ bool CryptoNoteProtocolHandler::request_missing_objects(CryptoNoteConnectionCont
     requestMissingPoolTransactions(context);
 
     context.m_state = CryptoNoteConnectionContext::state_normal;
-    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "SYNCHRONIZED OK";
+    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "BOI, SYNCHRONIZED OK";
     on_connection_synchronized();
   }
   return true;
@@ -587,13 +587,34 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
   bool val_expected = false;
   if (m_synchronized.compare_exchange_strong(val_expected, true)) {
     logger(Logging::INFO) << ENDL << "**********************************************************************" << ENDL
-      << "You are now synchronized with the network. You may now start simplewallet." << ENDL
+	  << "SUBSCRIBE TO PEWDIEPIE" << ENDL
+      << ENDL
+      << "You are now synchronized with the network. You may now start simplewallet. Or as I like to call it hlebsimplewallet!" << ENDL
       << ENDL
       << "Please note, that the blockchain will be saved only after you quit the daemon with \"exit\" command or if you use \"save\" command." << ENDL
       << "Otherwise, you will possibly need to synchronize the blockchain again." << ENDL
       << ENDL
-      << "Use \"help\" command to see the list of available commands." << ENDL
-      << "**********************************************************************";
+      << "Use \"help\" command to see the list of available commands.";
+    logger(Logging::INFO, Logging::BRIGHT_RED)  << "**********************************************************************" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "                 !#########       #" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "               !########!          ##!" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "            !########!               ###" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "         !##########                  ####" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "       ######### #####                ######" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "        !###!      !####!              ######" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "          !           #####            ######!" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "                        !####!         #######" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "                           #####       #######" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "                             !####!   #######!" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "                                ####!########" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "             ##                   ##########" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "           ,######!          !#############" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "         ,#### ########################!####!" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "       ,####'     ##################!'    #####" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "     ,####'            #######              !####!" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "    ####'                                      #####" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "    ~##                                          ##~" << ENDL;
+	logger(Logging::INFO, Logging::BRIGHT_RED)  << "**********************************************************************";
 
     m_observerManager.notify(&ICryptoNoteProtocolObserver::blockchainSynchronized, m_core.getTopBlockIndex());
   }
