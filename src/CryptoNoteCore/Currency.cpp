@@ -186,7 +186,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   assert(alreadyGeneratedCoins <= m_moneySupply);
   assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
 /* It did not work and I gave up. For now...  
-  uint64_t m_rewardCalc; //holy fuck, if this shit works ima be surprised af
+  uint64_t Currency::m_rewardCalc; 
   if (m_blockRewardCalculation == 1) {
 	  m_rewardCalc = ((m_memeNumber / m_bigSmoke) * m_memeNumberRUS); //dis be 44.95... etc.
   } else if (m_blockRewardCalculation == 0) {
