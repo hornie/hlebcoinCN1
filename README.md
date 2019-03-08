@@ -14,7 +14,6 @@ sudo apt-get update
 sudo apt-get -y install build-essential gcc g++ git cmake libboost-all-dev
 git clone https://github.com/hornie/hlebcoinCN1
 cd hlebcoinCN1
-chmod 755 external/rocksdb/build_tools/build_detect_platform //This is a temporary solution. Will(hopefully) be fixed later.
 export CXXFLAGS="-std=gnu++11"
 make
 ```
