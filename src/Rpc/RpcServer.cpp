@@ -187,8 +187,7 @@ bool RpcServer::processJsonRpcRequest(const HttpRequest& request, HttpResponse& 
       { "submitblock", { makeMemberMethod(&RpcServer::on_submitblock), false } },
       { "getlastblockheader", { makeMemberMethod(&RpcServer::on_get_last_block_header), false } },
       { "getblockheaderbyhash", { makeMemberMethod(&RpcServer::on_get_block_header_by_hash), false } },
-      { "getblockheaderbyheight", { makeMemberMethod(&RpcServer::on_get_block_header_by_height), false } },
-	  { "f_mempool_json", { makeMemberMethod(&RpcServer::f_on_mempool_json), false } }
+      { "getblockheaderbyheight", { makeMemberMethod(&RpcServer::on_get_block_header_by_height), false } }
     };
 
     auto it = jsonRpcHandlers.find(jsonRequest.getMethod());
@@ -1000,28 +999,6 @@ bool RpcServer::on_get_block_header_by_height(const COMMAND_RPC_GET_BLOCK_HEADER
   CachedBlock cachedBlock(block);
   assert(cachedBlock.getBlockIndex() == req.height);
   fill_block_header_response(block, false, index, cachedBlock.getBlockHash(), res.block_header);
-  res.status = CORE_RPC_STATUS_OK;
-  return true;
-}
-
-bool RpcServer::f_on_mempool_json(const COMMAND_RPC_GET_MEMPOOL::request& req, COMMAND_RPC_GET_MEMPOOL::response& res) {
-  auto pool = m_core.getMemoryPool();
-  for (const CryptoNote::tx_memory_pool::TransactionDetails txd : pool) {
-    f_mempool_transaction_response mempool_transaction;
-    uint64_t amount_out = getOutputAmount(txd.tx);
-
-    mempool_transaction.hash = Common::podToHex(txd.id);
-    mempool_transaction.fee = txd.fee;
-    mempool_transaction.amount_out = amount_out;
-    mempool_transaction.size = txd.blobSize;
-	mempool_transaction.receiveTime = txd.receiveTime;
-    mempool_transaction.keptByBlock = txd.keptByBlock;
-    mempool_transaction.max_used_block_height = txd.maxUsedBlock.height;
-    mempool_transaction.max_used_block_id = Common::podToHex(txd.maxUsedBlock.id);
-    mempool_transaction.last_failed_height = txd.lastFailedBlock.height;
-    mempool_transaction.last_failed_id = Common::podToHex(txd.lastFailedBlock.id);
-	res.mempool.push_back(mempool_transaction);
-  }
   res.status = CORE_RPC_STATUS_OK;
   return true;
 }

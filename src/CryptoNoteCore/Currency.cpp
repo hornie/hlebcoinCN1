@@ -197,6 +197,12 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
+  } if (m_blockRewardCalculation == 1) {
+	  baseReward = (((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor) << m_rewardCalc;
+      std::cout << "Current emission formula: " << baseReward << std::endl;
+	  } if (m_blockRewardCalculation == 0) {
+	  baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
+      std::cout << "Current emission formula: " << baseReward << std::endl;
   }
 
   size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
@@ -819,6 +825,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
   genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
   blockRewardCalculation(parameters::ADVANCED_BLOCK_REWARD_CALCULATION);
+  rewardCalc(parameters::SECOND_EMISSION_SPEED_FACTOR);
 
   rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
   zawyDifficultyBlockIndex(parameters::ZAWY_DIFFICULTY_BLOCK_INDEX);
