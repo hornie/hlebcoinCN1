@@ -1013,6 +1013,8 @@ bool Core::getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, c
   if (difficulty == 0) {
     logger(Logging::ERROR, Logging::BRIGHT_RED) << "difficulty overhead.";
     return false;
+  } if (difficulty != 0) {
+	std::cout << "Current difficulty: " << difficulty << std::endl;
   }
 
   b = boost::value_initialized<BlockTemplate>();

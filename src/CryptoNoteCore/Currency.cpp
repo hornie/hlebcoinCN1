@@ -194,15 +194,23 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
   }
 */  
   uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor;
-  if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
+  if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0 && m_debugval == 0) {
+    baseReward = m_genesisBlockReward;
+  } else if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0 && m_debugval == 1) {
     baseReward = m_genesisBlockReward;
     std::cout << "Genesis block reward: " << baseReward << std::endl;
-  } if (m_blockRewardCalculation == 1) {
+  }
+  if (m_blockRewardCalculation == 1 && m_debugval == 0) {
 	  baseReward = (((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor) << m_rewardCalc;
-      std::cout << "Current emission formula: " << baseReward << std::endl;
-	  } if (m_blockRewardCalculation == 0) {
+	  } else if (m_blockRewardCalculation == 1 && m_debugval == 1) {
+	  baseReward = (((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor) << m_rewardCalc;
+      std::cout << "Current block reward: " << baseReward << std::endl;
+	  }
+  if (m_blockRewardCalculation == 0 && m_debugval == 0) {
 	  baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
-      std::cout << "Current emission formula: " << baseReward << std::endl;
+  } else if (m_blockRewardCalculation == 0 && m_debugval == 1) {
+	  baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
+      std::cout << "Current block reward: " << baseReward << std::endl;
   }
 
   size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
@@ -756,6 +764,7 @@ m_timestampCheckWindowV5(currency.m_timestampCheckWindowV5),
 m_blockFutureTimeLimitV5(currency.m_blockFutureTimeLimitV5),
 m_moneySupply(currency.m_moneySupply),
 m_memeNumber(currency.m_memeNumber),
+m_debugval(currency.m_debugval),
 m_lit(currency.m_lit),
 m_memeNumberRUS(currency.m_memeNumberRUS),
 m_bigSmoke(currency.m_bigSmoke),
@@ -819,6 +828,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
 
   moneySupply(parameters::MONEY_SUPPLY);
   memeNumber(parameters::MEME_NUMBER);
+  debugval(parameters::DEBUG_VALUES);
   lit(parameters::LIT);
   memeNumberRUS(parameters::MEME_NUMBER_RUS);
   bigSmoke(parameters::BIG_SMOKE);
