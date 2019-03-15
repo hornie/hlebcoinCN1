@@ -77,7 +77,7 @@ bool ConfigurationManager::init(int argc, char** argv) {
   }
 
   if (cmdOptions.count("version") > 0) {
-    std::cout << "walletd v" << PROJECT_VERSION_LONG <<"dev version:" << DEV_PROJECT_VERSION;
+    std::cout << "walletd v" << PROJECT_VERSION_LONG << " dev version: " << DEV_PROJECT_VERSION;
     return false;
   }
 
