@@ -42,17 +42,19 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V5          = 11;
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1); //boi das a big numbah
 //the meme emission section. I would advise you not to touch this if you don't know what you're doing.
-const uint64_t MEME_NUMBER_RUS								 = 228; //DISABLED!!! Casues difficulty overhead. controls the emission, CYKA BLYAD. DO NOT TOUCH SUKA!
-const uint64_t LIT											 = 100; //DISABLED!!! It doesn't do anything atm.
+const uint64_t MEME_NUMBER_RUS								 = 228; // Controls the emission, CYKA BLYAD.
+const uint64_t LIT											 = 100; // tHiS coIn iS lIt(kill me)
 const uint64_t MEME_NUMBER                                   = 42; //feel old yet?
 const uint64_t BIG_SMOKE									 = 9 * 2 + 9 * 10 + (6 + 0.5) + 7 + (45 * 2 + 0.5) + 1; //213. Two number nines, a number nine large, a number six, with extra dip, a number seven, two number forty fives, one with cheese, and a large soda! on a serious note, messes with emission.
-const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; //DISABLED!!! 0 - return to vanilla emission, 1 - be a man, and stick with this abomination. Doesn't do anything atm.
+const uint64_t ADVANCED_BLOCK_REWARD_CALCULATION			 = 1; // 0 - return to vanilla emission, 1 - be a man, and stick with this abomination.
+const uint64_t SECOND_EMISSION_SPEED_FACTOR					 = 5; //another one
+const uint8_t  DEBUG_VALUES									 = 1; //used for debugging purposes. for instance displays current block reward in daemon
 //end of the meme emission section
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t   ZAWY_DIFFICULTY_V2                            = 1;
 const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 0;
 const unsigned EMISSION_SPEED_FACTOR                         = 19; // das a thicc number
-const uint64_t GENESIS_BLOCK_REWARD                          = 185550000000000000; //premine goes here. Zeros are for decimal point.
+const uint64_t GENESIS_BLOCK_REWARD                          = 92275000000000000; //premine goes here. Zeros are for decimal point.
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -73,7 +75,7 @@ const size_t   DIFFICULTY_WINDOW_V2                          = 720;
 const size_t   DIFFICULTY_CUT                                = 0;  // timestamps to cut after sorting
 const size_t   DIFFICULTY_CUT_V1                             = 60;
 const size_t   DIFFICULTY_CUT_V2                             = 60;
-const size_t   DIFFICULTY_LAG                                = 0;  // no fucking clue to what that does
+const size_t   DIFFICULTY_LAG                                = 0;  
 const size_t   DIFFICULTY_LAG_V1                             = 15;
 const size_t   DIFFICULTY_LAG_V2                             = 15;
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");

@@ -171,7 +171,7 @@ command_line::add_arg(desc_cmd_sett, arg_print_genesis_tx);
 
       if (command_line::get_arg(vm, command_line::arg_help))
       {
-        std::cout << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG << ENDL << ENDL;
+        std::cout << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG <<"dev version:" << DEV_PROJECT_VERSION << ENDL << ENDL;
         std::cout << desc_options << std::endl;
         return false;
       }
@@ -216,7 +216,7 @@ command_line::add_arg(desc_cmd_sett, arg_print_genesis_tx);
     // configure logging
     logManager.configure(buildLoggerConfiguration(cfgLogLevel, cfgLogFile));
 
-    logger(INFO) << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG;
+    logger(INFO) << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG <<"dev version:" << DEV_PROJECT_VERSION;
 
     if (command_line_preprocessor(vm, logger)) {
       return 0;
@@ -355,7 +355,7 @@ bool command_line_preprocessor(const boost::program_options::variables_map &vm, 
   bool exit = false;
 
   if (command_line::get_arg(vm, command_line::arg_version)) {
-    std::cout << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG << ENDL;
+    std::cout << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG <<"dev version:" << DEV_PROJECT_VERSION << ENDL;
     exit = true;
   }
   if (command_line::get_arg(vm, arg_os_version)) {
