@@ -1014,7 +1014,7 @@ bool Core::getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, c
     logger(Logging::ERROR, Logging::BRIGHT_RED) << "difficulty overhead.";
     return false;
   } if (difficulty != 0) {
-	std::cout << "Current difficulty: " << difficulty << std::endl;
+//	std::cout << "Current difficulty: " << difficulty << std::endl; //used for debugging purposes //TODO add to DEBUG_VALUES
   }
 
   b = boost::value_initialized<BlockTemplate>();
