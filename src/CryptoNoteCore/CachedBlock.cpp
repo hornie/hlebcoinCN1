@@ -21,6 +21,7 @@
 #include <Common/Varint.h>
 #include "CryptoNoteConfig.h"
 #include "CryptoNoteTools.h"
+#include <iostream>
 
 using namespace Crypto;
 using namespace CryptoNote;
@@ -69,14 +70,17 @@ const Crypto::Hash& CachedBlock::getBlockLongHash() const {
       const auto& rawHashingBlock = getParentBlockHashingBinaryArray(true);
       blockLongHash = Hash();
       cn_slow_hash_v0(rawHashingBlock.data(), rawHashingBlock.size(), blockLongHash.get());
-    } else if (block.majorVersion >= BLOCK_MAJOR_VERSION_4) {
+	  std::cout << "Now using cn_slow_hash_v0 " << cn_slow_hash_v0 << std::endl;
+    } else if ((block.majorVersion == BLOCK_MAJOR_VERSION_4) || (block.majorVersion == BLOCK_MAJOR_VERSION_5)) {
       const auto& rawHashingBlock = getParentBlockHashingBinaryArray(true);
       blockLongHash = Hash();
       cn_slow_hash_v1(rawHashingBlock.data(), rawHashingBlock.size(), blockLongHash.get());
+	  std::cout << "Now using cn_slow_hash_v1 " << cn_slow_hash_v1 << std::endl;
     } else if (block.majorVersion >= BLOCK_MAJOR_VERSION_6) {
       const auto& rawHashingBlock = getParentBlockHashingBinaryArray(true);
       blockLongHash = Hash();
       cn_slow_hash_v2(rawHashingBlock.data(), rawHashingBlock.size(), blockLongHash.get());
+	  std::cout << "Now using cn_slow_hash_v2 " << cn_slow_hash_v2 << std::endl;
     } else {
       throw std::runtime_error("Unknown block major version.");
     }
