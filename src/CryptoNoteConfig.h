@@ -54,7 +54,7 @@ const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t   ZAWY_DIFFICULTY_V2                            = 1;
 const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 0;
 const unsigned EMISSION_SPEED_FACTOR                         = 19; // das a thicc number
-const uint64_t GENESIS_BLOCK_REWARD                          = 92275000000000000; //premine goes here. Zeros are for decimal point.
+const uint64_t GENESIS_BLOCK_REWARD                          = 0; //premine goes here.
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -114,8 +114,8 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "HLEBcoin"; //nice name, right?
-const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180c0cbf0de97cdc90202f8fc46984bfcb1443f017974bef70ad12a6e1502bce1a6815eadeeb46440091421016223a21f887434d9a3e09fe8986116f9a8b4b8bfe41d1990c04096f123aec517";
+const char     CRYPTONOTE_NAME[]                             = "HLEBСoin"; //nice name, right?
+const char	   GENESIS_COINBASE_TX_HEX[]					 = "011401ff000180d6e5d7a4ee02029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101f81396af87abb7fb20241a35d564882fdd2bc6b522cf35392efbe74f397c8f6f";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;

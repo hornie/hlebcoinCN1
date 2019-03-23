@@ -193,7 +193,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
 	  m_rewardCalc = 1;
   }
 */  
-  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor;
+  uint64_t baseReward = ((((m_moneySupply - alreadyGeneratedCoins) / m_memeNumber) / m_bigSmoke) * m_lit) >> m_emissionSpeedFactor; //doesnt matter
   if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0 && m_debugval == 0) {
     baseReward = m_genesisBlockReward;
   } else if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0 && m_debugval == 1) {
@@ -212,6 +212,7 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
 	  baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
       std::cout << "Current block reward: " << baseReward << std::endl;
   }
+
 
   size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
   medianSize = std::max(medianSize, blockGrantedFullRewardZone);
